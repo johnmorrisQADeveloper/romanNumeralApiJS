@@ -18,4 +18,4 @@
 # Run docker container and go into bash prompt
     docker run -it romanApi:john /bin/bash
 
-# Use run commands to run the test file.
+NOTE: Use run commands to run within the container.
