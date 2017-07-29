@@ -1,0 +1,20 @@
+{
+  "name": "romansjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "mochawesome": "^2.3.0"
+  }
+}
