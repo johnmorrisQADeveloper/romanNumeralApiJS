@@ -26,7 +26,7 @@ describe("Main Path, Inner Boundary Values {1-3999}", function () {
                     console.log('statusCode        :', response.statusCode);
                 }
             });
-            setTimeout(done, 350);
+            setTimeout(done, 450);
         });
         it("" + values[i] + " =  " + expectedRomanValues[i], function (yes) {
             if (debugg) {
@@ -64,7 +64,7 @@ describe("Main Path, Check combinations {M:1000, CM:900, D:500, CD:400, C:100, X
                     console.log('statusCode        :', responseCode);
                 }
             });
-            setTimeout(done, 350);
+            setTimeout(done, 450);
         });
         it("" + values[i] + " =  " + expectedRomanValues[i], function (yes) {
             if (debugg) {
