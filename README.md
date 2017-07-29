@@ -15,5 +15,3 @@ docker build -t "romanApi:johnmorris" .
 docker run -it romanApi:john /bin/bash
 
 # Use run commands to run the test file.
-
-Note: I don't own the webservice!
