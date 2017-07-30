@@ -2,8 +2,9 @@
   
   Roman Numeral API - Test Project.
 
-    This project tests the roman numeral web api service, to check if the application has any issues.
-    Added some test to check different scenarios.
+    This project tests the roman numeral web api service, checks if the application has any issues.
+    Project has two test files, one for positive tests and one for negative tests.
+    Eg: Numeral 12 should return XII
 
 # Run test to produce html test report
     mocha --reporter mochawesome
