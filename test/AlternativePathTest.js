@@ -5,7 +5,7 @@
 var request = require("request");
 var romanApi = require("../lib/romanApi");
 var endPoint = require("../config/env.json").endPoint;
-var debugg = require("../config/env.json").debugger;
+var debugg = require('../lib/options');
 var assert = require('assert');
 
 
@@ -16,7 +16,7 @@ describe("Alternative Path, Check with 0", function () {
     it("" + value, function (done) {
         this.timeout(350);
         request(endPoint + value, function (error, response, body) {
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -27,7 +27,7 @@ describe("Alternative Path, Check with 0", function () {
         setTimeout(done, 250);
     })
     it("" + value + " =  " + expectedRoman, function (yes) {
-        if (debugg) {
+        if (debugg().debugger) {
             console.log('expectedRoman     :', expectedRoman);
             console.log('actualRoman       :', actualRoman);
             console.log('expected = actual :', expectedRoman == actualRoman);
@@ -48,7 +48,7 @@ describe("Alternative Path, Check with 9800", function () {
     it("" + value, function (done) {
         this.timeout(350);
         request(endPoint + value, function (error, response, body) {
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -59,7 +59,7 @@ describe("Alternative Path, Check with 9800", function () {
         setTimeout(done, 250);
     })
     it("" + value + " =  " + expectedRoman, function (yes) {
-        if (debugg) {
+        if (debugg().debugger) {
             console.log('expectedRoman     :', expectedRoman);
             console.log('actualRoman       :', actualRoman);
             console.log('expected = actual :', expectedRoman == actualRoman);
@@ -80,7 +80,7 @@ describe("Alternative Path, Check with -3", function () {
     it("" + value, function (done) {
         this.timeout(350);
         request(endPoint + value, function (error, response, body) {
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -91,7 +91,7 @@ describe("Alternative Path, Check with -3", function () {
         setTimeout(done, 250);
     })
     it("" + value + " =  " + expectedRoman, function (yes) {
-        if (debugg) {
+        if (debugg().debugger) {
             console.log('expectedRoman     :', expectedRoman);
             console.log('actualRoman       :', actualRoman);
             console.log('expected = actual :', expectedRoman == actualRoman);
@@ -110,7 +110,7 @@ describe("Alternative Path, Check with no values", function () {
     it("No value", function (done) {
         this.timeout(350);
         request(endPoint, function (error, response, body) {
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -121,7 +121,7 @@ describe("Alternative Path, Check with no values", function () {
         setTimeout(done, 250);
     })
     it("" + expectedRoman, function (yes) {
-        if (debugg) {
+        if (debugg().debugger) {
             console.log('expectedRoman     :', expectedRoman);
             console.log('actualRoman       :', actualRoman);
             console.log('expected = actual :', expectedRoman == actualRoman);
@@ -141,7 +141,7 @@ describe("Alternative Path, with chars ", function () {
     it("" + value, function (done) {
         this.timeout(350);
         request(endPoint + value, function (error, response, body) {
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -152,7 +152,7 @@ describe("Alternative Path, with chars ", function () {
         setTimeout(done, 250);
     })
     it("" + value + " =  " + expectedRoman, function (yes) {
-        if (debugg) {
+        if (debugg().debugger) {
             console.log('expectedRoman     :', expectedRoman);
             console.log('actualRoman       :', actualRoman);
             console.log('expected = actual :', expectedRoman == actualRoman);
@@ -173,7 +173,7 @@ describe("Alternative Path, with decimal values  ", function () {
     it("" + value, function (done) {
         this.timeout(350);
         request(endPoint + value, function (error, response, body) {
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -184,7 +184,7 @@ describe("Alternative Path, with decimal values  ", function () {
         setTimeout(done, 250);
     })
     it("" + value + " =  " + expectedRoman, function (yes) {
-        if (debugg) {
+        if (debugg().debugger) {
             console.log('expectedRoman     :', expectedRoman);
             console.log('actualRoman       :', actualRoman);
             console.log('expected = actual :', expectedRoman == actualRoman);
@@ -204,7 +204,7 @@ describe("Alternative Path, with Roman Numerals  ", function () {
     it("" + value, function (done) {
         this.timeout(350);
         request(endPoint + value, function (error, response, body) {
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -215,7 +215,7 @@ describe("Alternative Path, with Roman Numerals  ", function () {
         setTimeout(done, 250);
     })
     it("" + value + " =  " + expectedRoman, function (yes) {
-        if (debugg) {
+        if (debugg().debugger) {
             console.log('expectedRoman     :', expectedRoman);
             console.log('actualRoman       :', actualRoman);
             console.log('expected = actual :', expectedRoman == actualRoman);
@@ -242,7 +242,7 @@ describe("Alternative Path, with special characters ', !, & ", function () {
             request(endPoint + value, function (error, response, body) {
                 expectedRoman = romanApi.data.intToRoman(value);
                 actualRoman = body;
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -250,7 +250,7 @@ describe("Alternative Path, with special characters ', !, & ", function () {
             setTimeout(done, 450);
         });
         it("" + values[i] + " =  " + expectedRomanValues[i], function (yes) {
-            if (debugg) {
+            if (debugg().debugger) {
                 console.log('expectedRoman     :', expectedRoman);
                 console.log('actualRoman       :', actualRoman);
                 console.log('expected = actual :', expectedRoman == actualRoman);

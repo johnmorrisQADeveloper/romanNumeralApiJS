@@ -1,4 +1,4 @@
 ./mochawesome-report
 ./node_modules
-./idea
+.idea
 

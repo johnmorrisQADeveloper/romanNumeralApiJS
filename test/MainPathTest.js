@@ -5,8 +5,9 @@
 var request = require("request");
 var romanApi = require("../lib/romanApi");
 var endPoint = require("../config/env.json").endPoint;
-var debugg = require("../config/env.json").debugger;
+//var debugg = require("../config/env.json").debugger;
 var assert = require('assert');
+var debugg = require('../lib/options');
 
 describe("Main Path, Inner Boundary Values {1-3999}", function () {
     var expectedRoman, actualRoman;
@@ -22,7 +23,7 @@ describe("Main Path, Inner Boundary Values {1-3999}", function () {
             request(endPoint + value, function (error, response, body) {
                 expectedRoman = romanApi.data.intToRoman(value);
                 actualRoman = body;
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', response.statusCode);
                 }
@@ -30,7 +31,7 @@ describe("Main Path, Inner Boundary Values {1-3999}", function () {
             setTimeout(done, 450);
         });
         it("" + values[i] + " =  " + expectedRomanValues[i], function (yes) {
-            if (debugg) {
+            if (debugg().debugger) {
                 console.log('expectedRoman     :', expectedRoman);
                 console.log('actualRoman       :', actualRoman);
                 console.log('expected = actual :', expectedRoman == actualRoman);
@@ -61,7 +62,7 @@ describe("Main Path, Check combinations {M:1000, CM:900, D:500, CD:400, C:100, X
                 expectedRoman = romanApi.data.intToRoman(value);
                 actualRoman = body;
                 responseCode = response.statusCode;
-                if (debugg) {
+                if (debugg().debugger) {
                     console.log('error             :', error);
                     console.log('statusCode        :', responseCode);
                 }
@@ -69,7 +70,7 @@ describe("Main Path, Check combinations {M:1000, CM:900, D:500, CD:400, C:100, X
             setTimeout(done, 450);
         });
         it("" + values[i] + " =  " + expectedRomanValues[i], function (yes) {
-            if (debugg) {
+            if (debugg().debugger) {
                 console.log('expectedRoman     :', expectedRoman);
                 console.log('actualRoman       :', actualRoman);
                 console.log('expected = actual :', expectedRoman == actualRoman);

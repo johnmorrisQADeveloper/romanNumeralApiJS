@@ -12,6 +12,9 @@
 # Run test with standard mocha
     mocha
 
+# Run a test with debugger on
+    mocha ./test/AlternativePathTest.js --printDebug
+
 # Build a docker container from dockerfile
     cd romansJS
     docker build -t "romanApi:johnmorris" .
